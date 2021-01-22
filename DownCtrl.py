@@ -40,7 +40,9 @@ def add(url,md5,path):
 
 def start():
     for i in tasks:
+        i.status='正在下载'
         os.system("python {0} {1} {2}".format(i.url,i.md5,i.path))
+        i.status='下载完成'
 
 def new():
     global path_enter
